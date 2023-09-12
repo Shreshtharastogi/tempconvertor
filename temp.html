@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+     body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    animation: backgroundAnimation 10s linear infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-color: #783030;
+    }
+    50% {
+        background-color: #e0e0e0;
+    }
+    100% {
+        background-color: #482a8e;
+    }
+}
+
+/* Rest of your CSS remains the same */
+
+
+.container {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 350px;
+    margin: 50px auto;
+    transition: background-color 0.3s ease-in-out;
+}
+
+h1 {
+    color: #333333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    font-weight: bold;
+    margin-top: 15px;
+    color: #007bff;
+    font-size: 20px;
+}
+
+        /* body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px;
+            margin: 50px auto;
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            font-weight: bold;
+            margin-top: 10px;
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Temperature Converter</h1>
+        <label for="celsius">Enter temperature in Celsius:</label>
+        <input type="number" id="celsius" placeholder="Enter Celsius">
+        <br>
+        <label for="fahrenheit">Enter temperature in Fahrenheit:</label>
+        <input type="number" id="fahrenheit" placeholder="Enter Fahrenheit">
+        <br>
+        <button onclick="convertToCelsius()">Convert to Celsius</button>
+        <button onclick="convertToFahrenheit()">Convert to Fahrenheit</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function convertToCelsius() {
+            const fahrenheit = parseFloat(document.getElementById("fahrenheit").value);
+            const celsius = (fahrenheit - 32) * 5/9;
+            document.getElementById("result").textContent = `Result: ${celsius.toFixed(2)}°C`;
+        }
+
+        function convertToFahrenheit() {
+            const celsius = parseFloat(document.getElementById("celsius").value);
+            const fahrenheit = (celsius * 9/5) + 32;
+            document.getElementById("result").textContent = `Result: ${fahrenheit.toFixed(2)}°F`;
+        }
+    </script>
+</body>
+</html>
